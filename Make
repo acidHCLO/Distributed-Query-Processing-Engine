@@ -1,0 +1,19 @@
+CXX = g++
+CXXFLAGS = -std=c++17
+
+ENGINE_SRC = source_code/engine_source_code/engine.cpp
+DRIVER_SRC = source_code/driver_source_code/driver.cpp
+
+ENGINE_BIN = engine
+DRIVER_BIN = driver
+
+all: $(ENGINE_BIN) $(DRIVER_BIN)
+
+$(ENGINE_BIN):
+	$(CXX) $(CXXFLAGS) $(ENGINE_SRC) -o $(ENGINE_BIN)
+
+$(DRIVER_BIN):
+	$(CXX) $(CXXFLAGS) $(DRIVER_SRC) -o $(DRIVER_BIN)
+
+clean:
+	rm -f $(ENGINE_BIN) $(DRIVER_BIN)
